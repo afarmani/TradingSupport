@@ -1,20 +1,27 @@
-from client.setup.binance.clientsetup import ClientSetup
-from client.setup.binance.rest import BinanceRest
-from client.setup.binance.socket import BinanceSocket
-from utils.pretty.print import ppjson
+from binance.client import Client
 
-ENV = 'test'
+from client.setup.binance.history.retrieve import RetrieveHistory
+from client.setup.binance.services.clientsetup import ClientSetup
+from client.setup.binance.services.rest import BinanceRest
+from client.setup.binance.services.socket import BinanceSocket
+from utils.constants import AppConstants
+from utils.pretty.print import PrettyPrint
 
-client = ClientSetup(ENV).setup()
-rest = BinanceRest("XRPUSDT", client)
+symbol = "XRPUSDT"
+
+client = ClientSetup(AppConstants.ENV_TEST).setup()
+rest = BinanceRest(symbol, client)
+history = RetrieveHistory(symbol, interval=Client.KLINE_INTERVAL_1DAY, client=client)
 
 print("ACCOUNT INFO")
-ppjson(rest.get_account())
+PrettyPrint.json(rest.get_account())
 
 print("TICKER INFO")
-ppjson(rest.get_symbol_ticker())
+PrettyPrint.json(rest.get_symbol_ticker())
 
-BinanceSocket("XRPUSDT").connect()
+print("HISTORY")
+PrettyPrint.json(history.get_historical_klines("10 day ago UTC"))
 
+BinanceSocket(symbol).connect()
 
 # instead of making calls to REST API, use sockets

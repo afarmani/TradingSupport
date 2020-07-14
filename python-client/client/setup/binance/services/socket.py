@@ -1,7 +1,7 @@
 from binance.websockets import BinanceSocketManager
 # twisted is the framework used to interact with a websocket
 
-from client.setup.binance.clientsetup import ClientSetup
+from client.setup.binance.services.clientsetup import ClientSetup
 from client.setup.binance.model.klineticker import KlineTicker
 
 
