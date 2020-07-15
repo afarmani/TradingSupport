@@ -31,7 +31,7 @@ class RetrieveHistory:
         self.symbol = symbol
 
     def get_historical_klines(self, start_str, end_str=None):
-        """
+        """ default provides 500 points of data, maximum 1000.
         :param start_str: Start date string in UTC format or timestamp in milliseconds
         :type start_str: str|int
         :param end_str: optional - end date string in UTC format or timestamp in milliseconds (default will fetch everything up to now)

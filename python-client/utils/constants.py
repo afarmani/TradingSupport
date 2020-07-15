@@ -6,3 +6,9 @@ class DateTimeConstants:
 class AppConstants:
     ENV_TEST = "Test"
     ENV_LIVE = "Live"
+
+
+class ExporterConstants:
+    CSV = "csv"
+    JSON = "json"
+    PANDAS = "pandas"
