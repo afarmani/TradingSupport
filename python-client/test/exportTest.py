@@ -1,7 +1,7 @@
 import os
 import unittest
 import test
-from client.setup.binance.history.export import Exporter
+from history import Exporter
 from utils.constants import ExporterConstants
 
 fileName = "exportedFile"

@@ -1,6 +1,6 @@
 from typing import Type
-from client.setup.binance.services.clientsetup import ClientSetup
 from binance.client import Client
+from services.setup import ClientSetup
 
 
 class BinanceRest(ClientSetup):

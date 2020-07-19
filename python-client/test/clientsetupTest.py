@@ -1,5 +1,5 @@
-from client.setup.binance.history.retrieve import RetrieveHistory
-from client.setup.binance.services.clientsetup import ClientSetup
+from history.retrieve import RetrieveHistory
+from services import ClientSetup
 from utils.constants import AppConstants
 
 
