@@ -14,4 +14,3 @@ class PrettyPrint:
         data = json.loads(json_data)
         json_formatted_str = json.dumps(data, indent=2)
         print(json_formatted_str)
-

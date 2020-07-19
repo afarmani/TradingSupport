@@ -4,30 +4,14 @@ from binance.client import Client
 class RetrieveHistory:
 
     def __init__(self, symbol, interval, client):
-        """
-        :param symbol: Name of symbol pair e.g BNBBTC
-        :type symbol: str
-        :param interval: Binance Kline interval
-        :type interval: str
-        :param client: Binance Api Client
-        :type client: Client
-        """
         self.symbol = symbol
         self.interval = interval
         self.client = client
 
     def update_time_frame(self, interval):
-        """
-        :param interval: Binance Kline interval
-        :type interval: str
-        """
         self.interval = interval
 
     def update_symbol(self, symbol):
-        """
-        :param symbol: Name of symbol pair e.g BNBBTC
-        :type symbol: str
-        """
         self.symbol = symbol
 
     def get_historical_klines(self, start_str, end_str=None):
