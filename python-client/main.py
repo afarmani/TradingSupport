@@ -1,8 +1,8 @@
 from binance.client import Client
 
 from history.retrieve import RetrieveHistory
-from services import ClientSetup
-from services import BinanceRest
+from services.rest import BinanceRest
+from services.setup import ClientSetup
 from services.socket import BinanceSocket
 from utils.constants import AppConstants
 from utils.pretty.print import PrettyPrint
