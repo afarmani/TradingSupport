@@ -7,7 +7,6 @@ import win32api
 class ClientSetup:
 
     client = None
-# binance_api=6cIZENFBWAI149gcfWvhkGNthm6kiC4KfYrbKGV9RQMIquy0l8do3YfBn7pPgfXZ;binance_secret=
     def __init__(self, env):
         self.api_key = os.environ.get('binance_api')
         self.api_secret = os.environ.get('binance_secret')
