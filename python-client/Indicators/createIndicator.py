@@ -17,8 +17,8 @@ class Indicators:
         lower = str(window) + 'LowerBand' + str(datatype)
 
         self.df[std] = self.df[datatype].rolling(window=window).std()
-        self.df[upper] = self.df[basis] + (self.df[std]*deviation)
-        self.df[lower] = self.df[basis] - (self.df[std]*deviation)
+        self.df[upper] = self.df[basis] + (self.df[std] * deviation)
+        self.df[lower] = self.df[basis] - (self.df[std] * deviation)
 
         return self.df
 
@@ -28,4 +28,3 @@ class Indicators:
     def set_ma(self, window, datatype):
         basis = self.set_ma_key(datatype, window)
         self.df[basis] = self.df[datatype].rolling(window=window).mean()
-
