@@ -15,6 +15,14 @@ def set_tr(df: DataFrame):
 
 
 def set_atr(df: DataFrame, window: int):
+
+    if 'TR' not in df.columns:
+        df = set_tr(df)
+
+    if 'ATR' in df.columns:
+        print('ATR column already exists in passed dataframe.')
+        return df
+
     x = 0
     trValues = []
     atrValues = []

@@ -1,6 +1,14 @@
 import pandas as pd
 
 
+def prev_low_curr_low_diff(df):
+    return df['Low'].shift() - df['Low']
+
+
+def curr_high_prev_high_diff(df):
+    return df["High"] - df['High'].shift()
+
+
 class Indicators:
 
     def __init__(self, data):
